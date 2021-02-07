@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PasswordValidator
 {
@@ -7,7 +8,7 @@ namespace PasswordValidator
         public static void Main(string[] args)
         {
             /*
-            Project name: Password validator
+            Project name: Password Validator / Generator
             Author: Caio Aguiar
             */
 
@@ -21,6 +22,11 @@ namespace PasswordValidator
             //Get the user's input
             Console.WriteLine("Please, digit a password: ");
             string userPassword = Console.ReadLine();
+
+            if (userPassword == " ")
+            {
+                userPassword = Tools.GenerateRandomPassword(uppercase, lowercase, digits, specialChars);
+            }
 
             //score variable
             int score = 0;
